@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load tailwind_filters %}
+
+{% block content %}
+
+    <a href="/">Back to Listings</a>
+   <div class="mt-10">
+    <h1 class="text-4xl text-gray-900">Update a New Listing</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <button type="submit">Submit</button>
+    </form>
+   </div>
+
+{% endblock content %}
